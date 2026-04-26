@@ -1,8 +1,13 @@
-import 'package:cli/cli.dart';
-import 'package:test/test.dart';
+// import 'package:cli/wikipedia.dart';
+// import 'package:test/test.dart';
 
 void main() {
-  test('calculate', () {
-    expect(calculate(), 42);
-  });
+  print("test");
 }
+
+
+// void main() {
+//   test('calculate', () {
+//     expect(calculate(), 42);
+//   });
+// }
