@@ -1,26 +1,32 @@
 import 'package:cli/wikipedia.dart' as wiki;
+import 'package:command_runner/command_runner.dart';
 
 // Define the version of the CLI application
 const version = '1.0.0';
 
-void main(List<String> arguments) {
-  if(arguments.isEmpty){
-    printUsage();
-  }
-  else if(arguments[0] == '--help' || arguments[0] == '-h' || arguments[0] == 'help'){
-    printUsage();
-  }
-  else if(arguments[0] == '--version' || arguments[0] == '-v' || arguments[0] == 'version'){
-    print('CLI Application Version: $version');
-  }
-  else if(arguments[0] == '--search' || arguments[0] == '-s' || arguments[0] == 'search'){
-    final inputArgs = arguments.length > 1 ? arguments.sublist(1) : null;
-    wiki.searchWikipedia(inputArgs);
-  }
-  else {
-    print('Unknown option: ${arguments[0]}');
-    printUsage();
-  } 
+void main(List<String> arguments) async {
+
+    var runner = CommandRunner(); // Create an instance of your new CommandRunner
+    await runner.run(arguments); // Call its run method, awaiting its Future<void>
+
+
+  // if(arguments.isEmpty){
+  //   printUsage();
+  // }
+  // else if(arguments[0] == '--help' || arguments[0] == '-h' || arguments[0] == 'help'){
+  //   printUsage();
+  // }
+  // else if(arguments[0] == '--version' || arguments[0] == '-v' || arguments[0] == 'version'){
+  //   print('CLI Application Version: $version');
+  // }
+  // else if(arguments[0] == '--search' || arguments[0] == '-s' || arguments[0] == 'search'){
+  //   final inputArgs = arguments.length > 1 ? arguments.sublist(1) : null;
+  //   wiki.searchWikipedia(inputArgs);
+  // }
+  // else {
+  //   print('Unknown option: ${arguments[0]}');
+  //   printUsage();
+  // } 
 }
 
 
